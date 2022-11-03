@@ -1,0 +1,168 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #3FAF82;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bar-wrapper {
+    cursor: pointer;
+}
+
+.bar-wrapper div {
+    background-color: white;
+    position: relative;
+    height: 9px;
+    width: 95px;
+    box-shadow: 0px 0px 8px 0.5px rgba(57, 85, 74, 0.774);
+    border-radius: 4px;
+    margin: 17px 0px;
+}
+
+.bar-wrapper div:nth-child(1) {
+    animation: bar1-animation-rev 0.8s linear alternate forwards;
+}
+
+.bar-wrapper div:nth-child(2) {
+    animation: bar2-animation-rev 0.8s ease-out alternate forwards;
+}
+
+.bar-wrapper div:nth-child(3) {
+    animation: bar3-animation-rev 0.8s linear alternate forwards;
+}
+
+
+.bar-wrapper.active div:nth-child(1) {
+    animation: bar1-animation 0.8s linear alternate forwards;
+}
+
+.bar-wrapper.active div:nth-child(2) {
+    animation: bar2-animation 0.8s ease-out alternate forwards;
+}
+
+.bar-wrapper.active div:nth-child(3) {
+    animation: bar3-animation 0.8s linear alternate forwards;
+}
+
+.no-animation {
+    animation: none !important;
+}
+
+@keyframes bar1-animation {
+    0% {
+        transform: translateY(0px)rotate(0deg);
+    }
+
+    30% {
+        transform: translateY(26px);
+    }
+
+    70% {
+        transform: translateY(26px);
+    }
+
+    100% {
+        transform: translateY(26px) rotate(45deg);
+    }
+}
+
+@keyframes bar1-animation-rev {
+    0% {
+        transform: translateY(26px) rotate(45deg);
+    }
+
+    30% {
+        transform: translateY(26px) rotate(0deg);
+    }
+
+    70% {
+        transform: translateY(26px);
+    }
+
+    100% {
+        transform: translateY(0px)rotate(0deg);
+    }
+}
+
+@keyframes bar2-animation {
+    0% {
+        transform: scale(100%);
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+        transform: scale(0%);
+    }
+}
+
+@keyframes bar2-animation-rev {
+    0% {
+        opacity: 0%;
+        transform: scale(0%);
+    }
+
+    100% {
+        transform: scale(100%);
+        opacity: 100%;
+    }
+}
+
+@keyframes bar3-animation {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+
+    }
+
+    30% {
+        transform: translateY(-26px);
+    }
+
+    70% {
+        transform: translateY(-26px);
+    }
+
+    100% {
+        transform: translateY(-26px) rotate(135deg);
+    }
+}
+
+@keyframes bar3-animation-rev {
+    0% {
+        transform: translateY(-26px) rotate(135deg);
+
+    }
+
+    30% {
+        transform: translateY(-26px) rotate(0deg);
+    }
+
+    70% {
+        transform: translateY(-26px);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
