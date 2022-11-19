@@ -5,3 +5,6 @@ This repository will contains my practice version of HTML, CSS &amp; JS files fr
 - [Day-2: Menu Icon Challenge]
 - [Day-3: The Pyramide]
 - [Day-4: Loading]
+- [Day-5: Statistic]
+- [Day-6: Profile]
+
