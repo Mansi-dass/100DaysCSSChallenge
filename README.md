@@ -7,4 +7,4 @@ This repository will contains my practice version of HTML, CSS &amp; JS files fr
 - [Day-4: Loading]
 - [Day-5: Statistic]
 - [Day-6: Profile]
-- [Day-7: Notifications, Search and Menu]
+- [Day-7: Notifications, Search and Menu](https://codepen.io/mansiiiii/full/XWYYEvR)
