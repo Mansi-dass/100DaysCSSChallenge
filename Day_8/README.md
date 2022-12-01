@@ -6,3 +6,4 @@ So you'll learn/practice about:
 - ::after selector
 - transform-origin importance
 - and where the magic happens: filters
+- additional scss/sass 
