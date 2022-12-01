@@ -8,3 +8,4 @@ This repository will contains my practice version of HTML, CSS &amp; JS files fr
 - [Day-5: Statistic](https://codepen.io/mansiiiii/full/qBKPBZW)
 - [Day-6: Profile](https://codepen.io/mansiiiii/full/JjZOgbY)
 - [Day-7: Notifications, Search and Menu](https://codepen.io/mansiiiii/full/XWYYEvR)
+- [Day-8: Metaballs]{https://codepen.io/mansiiiii/full/GRGYZPo}
