@@ -1,0 +1,92 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: 'Open Sans', Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: black;
+    filter: contrast(20);
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.ball {
+    width: 85px;
+    height: 85px;
+    background-color: #fff;
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+@for $b from 1 to 9 {
+    .bulge-#{$b} {
+        position: absolute;
+        left: 22px;
+        top: 22px;
+        width: (32 + $b*2) + px;
+        height: (32 + $b*2) + px;
+        transform: rotate((random(300)) + deg);
+
+        &::after {
+            content: '';
+            display: block;
+            width: (32 + $b*2) + px;
+            height: (32 + $b*2) + px;
+            border-radius: 50%;
+            background-color: #fff;
+            transform: translate(-$b + px);
+            transform-origin: (35 - $b*2) +px (32 - $b*3) +px;  
+            animation: rotate360 (1.9 + $b/4) + s ease-out (0.6 + $b/4)+ s infinite;
+            filter: blur(5px);
+        }
+    }
+}
+
+@for $s from 1 to 11 {
+    .splater-#{$s} {
+        position: absolute;
+        left: 42px;
+        top: 42px;
+        width: (6 + $s) + px;
+        height: (6 + $s) + px;
+        transform: rotate((random(200)) + deg);
+
+        &::after {
+            content: '';
+            display: block;
+            width: (6 + $s) + px;
+            height: (6 + $s) + px;
+            border-radius: 50%;
+            background-color: #fff;
+            transform-origin: (60 - $s*2) + px (60 - $s*2) + px;
+            animation: rotate360 (2.8 + $s/4) + s ease-in (0.5 + $s/4)+ s infinite;
+            filter: blur(2px);
+        }
+    }
+}
+
+@keyframes rotate360 {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translate(0px);
+    }
+}
