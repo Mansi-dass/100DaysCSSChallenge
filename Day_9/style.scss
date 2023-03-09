@@ -1,0 +1,263 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400&display=swap');
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+    box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: #fff;
+    color: #333;
+    font-family: 'Yantramanav', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.rainy-night {
+    position: relative;
+    width: 100%;
+    height: 78%;
+    background-color: #1A2238;
+}
+
+.moon {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: #F6EDBD;
+    box-shadow: 0px 0px 11px 0px #F6EDBD;
+    overflow: hidden;
+    animation: moon-ani 1s ease-out forwards;
+
+    @for $crater from 1 to 13 {
+        .craters-#{$crater} {
+            position: absolute;
+            width: (1+$crater) +px;
+            height: (1+$crater) +px;
+            border-radius: 50%;
+            background-color: #ECE1A8;
+        }
+    }
+
+    .craters-1 {
+        top: 56px;
+        left: 45px;
+    }
+
+    .craters-2 {
+        top: 29px;
+        left: 16px;
+    }
+
+    .craters-3 {
+        top: 40px;
+        left: 39px;
+    }
+
+    .craters-4 {
+        top: 54px;
+        left: 32px;
+    }
+
+    .craters-5 {
+        top: 33px;
+        left: 26px;
+    }
+
+    .craters-6 {
+        top: 40px;
+        left: 15px;
+    }
+
+    .craters-7 {
+        top: 16px;
+        left: 45px;
+    }
+
+    .craters-8 {
+        top: 40px;
+        left: 50px;
+    }
+
+    .craters-9 {
+        top: 25px;
+        left: 63px;
+    }
+
+    .craters-10 {
+        top: 60px;
+        left: 15px;
+    }
+
+    .craters-11 {
+        top: 12px;
+        left: 2px;
+    }
+
+    .craters-12 {
+        top: 10px;
+        left: 26px;
+    }
+}
+
+@keyframes moon-ani {
+    0% {
+        transform: translate(30px, 300px);
+    }
+
+    100% {
+        transform: translate(60px, 50px);
+    }
+}
+
+.land-back-1 {
+    position: absolute;
+    top: 200px;
+    left: -15px;
+    background-color: #26314F;
+    width: 250px;
+    height: 170px;
+    border-radius: 50%;
+}
+
+.land-back-2 {
+    @extend .land-back-1;
+    left: 220px;
+}
+
+.land-front-1 {
+    position: absolute;
+    top: 250px;
+    left: -90px;
+    background-color: #303C5D;
+    width: 280px;
+    height: 180px;
+    border-radius: 50%;
+}
+
+.land-front-2 {
+    @extend .land-front-1;
+    top: 220px;
+    left: 90px;
+}
+
+.land-front-3 {
+    @extend .land-front-1;
+    left: 330px;
+}
+
+.weather-detail-container {
+    position: relative;
+    width: 100%;
+    height: 23%;
+    background-color: #fff;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.today-wtr {
+    align-items: center;
+    justify-content: space-around;
+
+    .num {
+        font-size: 3.2rem;
+        font-weight: 300;
+        padding: 20px;
+    }
+}
+
+
+.future-wtr {
+    padding: 25px;
+    align-items: flex-end;
+}
+
+// droplets 
+@for $bigDrop from 1 to 11 {
+    .drops-big-#{$bigDrop} {
+        position: absolute;
+        top: -20px;
+        left: ( 40*$bigDrop - 40 ) + px;
+        height: 12px;
+        width: 12px;
+        z-index: 10;
+        background-color: #7FC1F9;
+        border-radius: 80% 0 55% 50% / 55% 0 80% 50%;
+        animation: drops ( 0.7 + random(2)/$bigDrop)+s linear ( random(50)/20)+s infinite;
+    }
+}
+@for $medDrop from 1 to 11 {
+    .drops-medium-#{$medDrop} {
+        @extend .drops-big-1;
+        left: ( 40*$medDrop - 80 ) + px;
+        width: 9px;
+        height: 9px;
+        opacity: 0.6;
+        z-index: 5;
+        animation: drops ( 1  + random(2)/$medDrop)+s linear ( random(50)/20)+s infinite;
+    }
+}
+@for $smallDrop from 1 to 11 {
+    .drops-small-#{$smallDrop} {
+        @extend .drops-big-1;
+        left: ( 40*$smallDrop - 60 ) + px;
+        width: 6px;
+        height: 6px;
+        opacity: 0.4;
+        z-index: 2;
+        animation: drops ( 1.6  + random(2)/$smallDrop)+s linear ( random(50)/20)+s infinite;
+    }
+}
+
+
+@keyframes drops {
+    0%{
+        transform: translate3d(70px,0px,0px) scaleX(1) scaleY(1) rotate(-25deg);
+    }
+    88%{
+        transform: translate3d(0px,324px,0px)  scaleX(1) scaleY(1)rotate(-25deg) ;
+    }
+    100%{
+        transform:translate3d(0px,324px,0px) scaleX(2) scaleY(0)rotate(-40deg);
+    }   
+}
+
+// utility classes
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.dis-flex {
+    display: flex;
+}
+
+.pr-16 {
+    padding-right: 16px !important;
+}
+
+.light {
+    font-weight: 300;
+    color: black;
+    padding-right: 8px;
+}
+
+.dark {
+    font-weight: 400;
+    color: black;
+}
