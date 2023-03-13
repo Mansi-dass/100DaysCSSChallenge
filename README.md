@@ -10,3 +10,4 @@ This repository will contains my practice version of HTML, CSS &amp; JS files fr
 - [Day-7: Notifications, Search and Menu](https://codepen.io/mansiiiii/full/XWYYEvR)
 - [Day-8: Metaballs](https://codepen.io/mansiiiii/full/GRGYZPo)
 - [Day-9: Rainy Night](https://codepen.io/mansiiiii/full/RwYjpWW)
+- [Day-10: Watch](https://codepen.io/mansiiiii/full/vYzdQmR)
