@@ -1,4 +1,4 @@
-Day 8 Challenge: Rainy Night
+Day 9 Challenge: Rainy Night
 
 This challenge need sync with other elements of the scene like droplets:
 - that need to have some amount of distance to see them seperately
